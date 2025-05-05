@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naughty Bhai</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: linear-gradient(to bottom right, #87cefa, #ffffff);
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+    }
+
+    h1 {
+      color: black;
+      padding: 20px;
+    }
+
+    .images {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .images img {
+      width: 200px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .donkey {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      width: 100px;
+    }
+
+    .chocolate {
+      position: absolute;
+      top: -50px;
+      width: 40px;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { top: -50px; }
+      100% { top: 100vh; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Ye mera bhai hai jo bahut badmash h isko pdhne nhi aata bss time waste krta h aur kisi ka baat bhi nhi maanta.</h1>
+
+  <div class="images">
+    <img src="photo1.jpg" alt="Photo 1">
+    <img src="photo2.jpg" alt="Photo 2">
+  </div>
+
+  <img src="https://i.imgur.com/9O6vZ2Y.png" class="donkey" alt="Funny Donkey">
+
+  <!-- Animated chocolate rain -->
+  <script>
+    const chocolateRain = () => {
+      const choco = document.createElement('img');
+      choco.src = 'https://i.imgur.com/J8jX9Kg.png';
+      choco.className = 'chocolate';
+      choco.style.left = Math.random() * 100 + 'vw';
+      choco.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      document.body.appendChild(choco);
+
+      setTimeout(() => {
+        choco.remove();
+      }, 6000);
+    };
+
+    setInterval(chocolateRain, 300);
+  </script>
+</body>
+</html>
